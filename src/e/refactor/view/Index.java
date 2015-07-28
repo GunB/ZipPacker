@@ -11,6 +11,7 @@ import e.utility.JFolderChooser;
 import e.utility.TextAreaOutputStream;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -39,6 +40,7 @@ public class Index extends javax.swing.JFrame {
             Logger.getLogger(Index.class.getName()).log(Level.SEVERE, null, ex);
         }
         System.setOut(con);
+        System.setErr(con);
         System.out.println("Welcome!");
     }
 
@@ -291,7 +293,7 @@ public class Index extends javax.swing.JFrame {
 
         chkInclude.setText("Incluir SOLO archivos por nombre según cumplan con la expresión regular descrita");
 
-        txtRegexInclude.setText("^.*(ob12\\.zip)$");
+        txtRegexInclude.setText("^.*(ob12)(rec[0-1][1-9]){0,1}\\.zip$");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -451,7 +453,7 @@ public class Index extends javax.swing.JFrame {
             this.lblMessage,
             this.chkCopyAll.isSelected(),
             this.chkAddNewFiles.isSelected(),
-            chkInclude.isSelected() ? txtRegexInclude.getText() : "*"
+            chkInclude.isSelected() ? txtRegexInclude.getText() : ".*"
         };
 
         this.tbbData.setSelectedIndex(1);

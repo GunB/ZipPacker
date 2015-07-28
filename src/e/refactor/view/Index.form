@@ -298,7 +298,7 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtRegexInclude">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="^.*(ob12\u005c.zip)$" containsInvalidXMLChars="true"/>
+                    <Property name="text" type="java.lang.String" value="^.*(ob12)(rec[0-1][1-9]){0,1}\u005c.zip$" containsInvalidXMLChars="true"/>
                   </Properties>
                 </Component>
               </SubComponents>
